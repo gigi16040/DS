@@ -1,0 +1,30 @@
+
+package pkg0503java;
+
+import java.util.Scanner;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        String nome;
+        String escola;
+        double nota=0;
+        double media=0;
+        System.out.print("Escreva seu Nome:");
+        nome = sc.nextLine();
+        System.out.print("Escreva da Escola:");
+        escola = sc.nextLine () ;
+        for (int i=0; i<6;i++){
+            nota = sc.nextDouble();
+            media = media + nota;
+        }
+        System.out.print(media);
+        
+        
+       }
+       }
+    
+  
+
