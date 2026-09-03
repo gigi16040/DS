@@ -1,0 +1,92 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Lista {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        ArrayList<Double> notas = new ArrayList<>();
+
+        // Notas iniciais
+        System.out.print("Digite quantas notas deseja cadastrar: ");
+        int quantidade = sc.nextInt();
+
+        for (int i = 0; i < quantidade; i++) {
+            System.out.print("Digite a nota: ");
+            double nota = sc.nextDouble();
+
+            notas.add(nota);
+        }
+
+        int opcao = 0;
+
+        while (opcao != 6) {
+
+            System.out.println("\n1 - Adicionar nota");
+            System.out.println("2 - Remover nota");
+            System.out.println("3 - Listar notas");
+            System.out.println("4 - Calcular media");
+            System.out.println("5 - Ordenar notas");
+            System.out.println("6 - Sair");
+
+            System.out.print("Escolha: ");
+            opcao = sc.nextInt();
+
+            if (opcao == 1) {
+
+                System.out.print("Digite a nota: ");
+                double nota = sc.nextDouble();
+
+                notas.add(nota);
+
+            } else if (opcao == 2) {
+
+                System.out.println("Notas:");
+
+                for (int i = 0; i < notas.size(); i++) {
+                    System.out.println(i + " - " + notas.get(i));
+                }
+
+                System.out.print("Digite a posição para remover: ");
+                int posicao = sc.nextInt();
+
+                notas.remove(posicao);
+
+            } else if (opcao == 3) {
+
+                System.out.println("Notas cadastradas:");
+
+                for (int i = 0; i < notas.size(); i++) {
+                    System.out.println(notas.get(i));
+                }
+
+            } else if (opcao == 4) {
+
+                double soma = 0;
+
+                for (int i = 0; i < notas.size(); i++) {
+                    soma = soma + notas.get(i);
+                }
+
+                double media = soma / notas.size();
+
+                System.out.println("Media: " + media);
+
+            } else if (opcao == 5) {
+
+                Collections.sort(notas);
+
+                System.out.println("Notas ordenadas:");
+
+                for (int i = 0; i < notas.size(); i++) {
+                    System.out.println(notas.get(i));
+                }
+            }
+        }
+
+        sc.close();
+    }
+}
